@@ -39,8 +39,6 @@
   background-color: white !important;
 }
 
-
-
 /* Card Hover Animation (Pop-out effect) */
 .hover-card {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -139,16 +137,18 @@
   transform: translateY(-2px); /* Hover par text thora upar uthega */
 }
 
-/* GitHub Button Hover Effect */
+/* GitHub Button Hover Effect - UPDATED TO FIX COLOR ISSUE */
 .btn-custom-outline {
-  border: 2px solid #3b82f6; /* Blue border */
-  color: #ffffff;
+  border: 2px solid #3b82f6 !important; /* Blue border */
+  color: #ffffff !important; /* Text explicitly white kar diya */
+  background-color: transparent !important; /* Shuru mein transparent background */
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .btn-custom-outline:hover {
-  background-color: #3b82f6;
-  color: #ffffff;
-  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+  background-color: #3b82f6 !important; /* Hover par blue background */
+  color: #ffffff !important; /* Hover par text white hi rahega */
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4) !important;
   transform: translateY(-2px);
 }
