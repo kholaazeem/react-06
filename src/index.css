@@ -1,34 +1,154 @@
-body {
-  background-color: #f8f9fa; /* Halke gray rang ka background */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* --- PRO LEVEL UI UPDATES --- */
+
+/* Hero Banner */
+.hero-section {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  padding: 80px 0 120px 0;
+  text-align: center;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  margin-bottom: -60px; /* Glass panel ko overlap karne ke liye */
 }
 
-/* App Container for Sticky Footer */
-.app-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+/* Glassmorphism Floating Panel */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 10;
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-.main-content {
-  flex: 1; /* Ye content ko push karke footer ko end par bhej dega */
+/* Custom Input Fields */
+.custom-input {
+  border-radius: 10px !important;
+  padding: 12px 20px !important;
+  border: 1px solid #dee2e6 !important;
+  background-color: #f8f9fa !important;
+  transition: all 0.3s;
 }
 
-/* Card Hover Animation */
+.custom-input:focus {
+  box-shadow: 0 0 0 3px rgba(44, 83, 100, 0.2) !important;
+  border-color: #2c5364 !important;
+  background-color: white !important;
+}
+
+
+
+/* Card Hover Animation (Pop-out effect) */
 .hover-card {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .hover-card:hover {
-  transform: translateY(-8px); /* Card thora upar uthega */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important; /* Pyaara sa shadow */
+  /* scale(1.05) card ko 5% bara karke bahir ki taraf nikalega */
+  /* translateY(-8px) card ko thora sa upar uthayega */
+  transform: scale(1.05) translateY(-8px); 
+  
+  /* Shadow ko thora zyada dark aur phaila hua kar diya taake 3D feel aaye */
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2) !important; 
+  
+  /* z-index zaroori hai taake bara hone par card doosre cards ke peechay na chhupe */
+  z-index: 2; 
+  position: relative;
 }
 
-/* Footer Styling */
-.footer-custom {
-  background-color: #212529;
-  color: #adb5bd;
-  padding: 20px 0;
-  text-align: center;
-  margin-top: auto;
+/* --- HIGH CONTRAST PRO FOOTER --- */
+.pro-footer {
+  /* Ekdum dark aur pyara background */
+  background-color: #111827 !important; 
+  color: #f9fafb !important; /* Text bilkul light/white */
+  padding: 50px 0 20px 0;
+  width: 100%;
+  margin-top: auto; 
+  border-top: 4px solid #3b82f6; /* Upar ek pyari si blue line */
+}
+
+/* Headings ka color explicitly white kar diya */
+.pro-footer h5 {
+  color: #ffffff !important;
+  letter-spacing: 1px;
+}
+
+/* Paragraphs ka color thora soft white */
+.pro-footer p {
+  color: #d1d5db !important;
+}
+
+/* Footer Links ki styling */
+.footer-link {
+  color: #9ca3af !important; /* Light gray */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+  display: inline-block;
+  font-weight: 500;
+}
+
+/* Hover karne par text pure white ho jayega aur aage jayega */
+.footer-link:hover {
+  color: #ffffff !important;
+  transform: translateX(5px);
+}
+
+/* Divider Line */
+.footer-divider {
+  border-top: 1px solid #374151 !important;
+  margin: 25px 0 15px 0;
+}
+
+/* Social Icons */
+.social-icon {
+  font-size: 1.5rem;
+  color: #9ca3af !important;
+  transition: all 0.3s ease;
+  margin-right: 15px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.social-icon:hover {
+  color: #ffffff !important;
+  transform: scale(1.2) translateY(-3px);
+}
+
+/* --- PRO LEVEL HEADER STYLING --- */
+.pro-navbar {
+  /* Dark background slight transparency ke sath taake glass effect aaye */
+  background: rgba(15, 32, 39, 0.95) !important; 
+  backdrop-filter: blur(10px); /* Peechay ka hissa dhundla karne ke liye */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Neechay ek halki si line */
+}
+
+.nav-link-custom {
+  color: #d1d5db !important; /* Light gray text */
+  font-weight: 500;
+  margin-left: 20px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.nav-link-custom:hover {
+  color: #ffffff !important; /* Hover par pure white */
+  transform: translateY(-2px); /* Hover par text thora upar uthega */
+}
+
+/* GitHub Button Hover Effect */
+.btn-custom-outline {
+  border: 2px solid #3b82f6; /* Blue border */
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.btn-custom-outline:hover {
+  background-color: #3b82f6;
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+  transform: translateY(-2px);
 }
