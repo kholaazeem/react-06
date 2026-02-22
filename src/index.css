@@ -116,39 +116,63 @@
   transform: scale(1.2) translateY(-3px);
 }
 
-/* --- PRO LEVEL HEADER STYLING --- */
+/* --- PRO LEVEL HEADER STYLING (DARK BLACK THEME) --- */
 .pro-navbar {
-  /* Dark background slight transparency ke sath taake glass effect aaye */
-  background: rgba(15, 32, 39, 0.95) !important; 
-  backdrop-filter: blur(10px); /* Peechay ka hissa dhundla karne ke liye */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Neechay ek halki si line */
+  /* Bilkul dark black background */
+  background-color: #000000 !important; 
+  /* Neechay ek halki si dark gray line taake page se alag dikhe */
+  border-bottom: 1px solid #222222; 
 }
 
+/* --- SMOOTH & PRO NAV LINKS --- */
 .nav-link-custom {
-  color: #d1d5db !important; /* Light gray text */
-  font-weight: 500;
+  color: #ffffff !important; /* Text bilkul pure white */
+  font-weight: 700 !important; /* Font ko bold (mota) kar diya */
+  font-size: 1.05rem; /* Text thora sa wazeh karne ke liye */
   margin-left: 20px;
-  transition: all 0.3s ease;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px; /* Text ke darmiyan thori jagah */
+  text-decoration: none !important; 
+  position: relative; /* Animated underline ke liye zaroori hai */
+  transition: opacity 0.5s ease-in-out !important; /* Opacity kam hone ki speed ko slow (0.5s) kar diya */
+  opacity: 1; /* Shuru mein opacity full hogi */
 }
 
+/* Animated Underline Trick (Pro Level) */
+.nav-link-custom::after {
+  content: '';
+  position: absolute;
+  width: 0; /* Shuru mein line ki chaurai zero (0) hai */
+  height: 2px; /* Line ki motai */
+  bottom: -4px; /* Text se thora neechay rakha hai */
+  left: 0;
+  background-color: #ffffff; /* White line */
+  transition: width 0.5s ease-in-out; /* Line draw hone ki speed ko bhi slow (0.5s) kar diya */
+}
+
+/* Hover Effect: Text ki opacity aahista se kam hogi */
 .nav-link-custom:hover {
-  color: #ffffff !important; /* Hover par pure white */
-  transform: translateY(-2px); /* Hover par text thora upar uthega */
+  opacity: 0.6 !important; /* Text thora dhundla (light) ho jayega */
+  color: #ffffff !important; 
 }
 
-/* GitHub Button Hover Effect - UPDATED TO FIX COLOR ISSUE */
+/* Hover Effect: Line aahista se 100% tak draw ho jayegi */
+.nav-link-custom:hover::after {
+  width: 100%; /* Hover karne par line poori width le legi */
+}
+
+/* --- GitHub Button Fix --- */
 .btn-custom-outline {
-  border: 2px solid #3b82f6 !important; /* Blue border */
-  color: #ffffff !important; /* Text explicitly white kar diya */
-  background-color: transparent !important; /* Shuru mein transparent background */
-  transition: all 0.3s ease;
+  border: 2px solid #ffffff !important; /* Border white kar diya dark theme ke liye */
+  color: #ffffff !important; 
+  background-color: transparent !important; 
+  transition: all 0.4s ease; /* Isko bhi thora smooth kar diya */
   text-decoration: none;
+  font-weight: bold;
 }
 
 .btn-custom-outline:hover {
-  background-color: #3b82f6 !important; /* Hover par blue background */
-  color: #ffffff !important; /* Hover par text white hi rahega */
-  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4) !important;
+  background-color: #ffffff !important; /* Hover par white background */
+  color: #000000 !important; /* Hover par text black ho jayega */
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2) !important;
   transform: translateY(-2px);
 }

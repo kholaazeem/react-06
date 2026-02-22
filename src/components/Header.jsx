@@ -1,5 +1,7 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
+// Yahan humne FontAwesome se Globe ka icon import kiya hai
+import { FaGlobeAmericas } from "react-icons/fa";
 
 const Header = () => {
   return (
@@ -7,7 +9,10 @@ const Header = () => {
       <Container>
         {/* Logo / Brand Name */}
         <Navbar.Brand as={Link} to="/" className="fw-bold fs-4 text-white d-flex align-items-center">
-          <span className="me-2 fs-3">🌍</span> 
+          
+          {/* Emoji ki jagah ab PRO Icon aa gaya, jiska color humne halka sa blue (text-primary) rakha hai */}
+          <FaGlobeAmericas className="me-2 fs-3 text-primary" /> 
+          
           <span style={{ letterSpacing: '1px' }}>Global Explorer</span>
         </Navbar.Brand>
 

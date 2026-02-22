@@ -140,12 +140,18 @@ const Home = () => {
             <Pagination.Prev 
               disabled={currentPage === 1} 
               onClick={() => setCurrentPage(p => Math.max(1, p - 1))} 
-            />
+            >
+              Previous
+            </Pagination.Prev>
+            
             <Pagination.Item active className="fw-bold">{currentPage}</Pagination.Item>
+            
             <Pagination.Next 
               disabled={lastIndex >= filteredCountries.length}
               onClick={() => setCurrentPage(p => p + 1)} 
-            />
+            >
+              Next
+            </Pagination.Next>
           </Pagination>
         )}
       </Container>
